@@ -1,10 +1,15 @@
 #!/usr/bin/bash
 echo 'This repo is made for Kali Chroot in Termux!';
-apt update && apt remove python3 python3-pip --purge -y && apt install lxde-core tigervnc-standalone-server python python-pip leafpad -y;
-pip install -r requirements.txt;
+cp -r /etc/apt/sources.list sources.list.bak;
+echo deb http://ftp.debian.org/debian unstable main contrib non-free >/etc/apt/sources.list;
+apt-get clean;
+apt update && apt install lxde-core tigervnc-standalone-server python python-pip leafpad -y;
+cp -r sources.list.bak /etc/apt/sources.list;
+apt-get clean;
+pip3 install -r requirements.txt;
 mkdir ~/.vnc;
 echo lxsession >~/.vnc/xstartup;
 vncserver :1 -localhost no;
 export DISPLAY=:1;
 leafpad run.py;
-python run.py;
+python3 run.py;

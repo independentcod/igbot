@@ -6,14 +6,14 @@ import schedule
 import sys
 
 
-instauser = 'XXXX'
+instauser = 'independentcod'
 instapass = 'XXXX'
-whitelist = ['lackwardsbanguage', 'putln2']
+whitelist = ['mollyeskam', 'momeskam']
 schedule_time = '09:00'
-daily_limit = 100
-min_sleep = 15
-max_sleep = 30
-test_mode = 1
+daily_limit = 239
+min_sleep = 19
+max_sleep = 41
+test_mode = 0
 
 
 class C:
